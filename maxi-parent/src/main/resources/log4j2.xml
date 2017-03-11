@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Configuration>
+    <Appenders>
+        <Console name="STDOUT" target="SYSTEM_OUT">
+            <PatternLayout pattern="%d %-5p [%t] %C{2} (%F:%L) - %m%n"/>
+        </Console>
+    </Appenders>
+    <Loggers>
+        <Logger name="org.springframework" level="debug"/>
+        <Logger name="org.springframework.web" level="debug"/>
+        <Logger name="cn.maximus" level="trace"/>
+        <Logger name="java.sql.Connection" level="debug"/>
+        <Logger name="java.sql.Statement" level="debug"/>
+        <Logger name="java.sql.PreparedStatement" level="debug"/>
+        <Logger name="com.mybatis" level="debug"/>
+        <Logger name="com.ibatis.common.jdbc.SimpleDataSource" level="debug"/>
+        <Logger name="com.ibatis.common.jdbc.ScriptRunner" level="debug"/>
+        <Logger name="com.ibatis.sqlmap.engine.impl.SqlMapClientDelegate" level="debug"/>
+        <Root level="trace">
+            <AppenderRef ref="STDOUT"/>
+        </Root>
+    </Loggers>
+</Configuration>

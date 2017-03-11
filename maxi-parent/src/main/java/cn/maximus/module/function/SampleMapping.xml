@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper    
+    PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"    
+    "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="cn.maximus.module.function.SampleMapping">
+
+	<update id="create" statementType="STATEMENT">
+		CREATE TABLE IF NOT EXISTS maxi_test(id INT,content VARCHAR(40),alive INT DEFAULT 1,created DATETIME,updated DATETIME,deleted DATETIME);
+	</update>
+	
+	<insert id="add" parameterType="String">
+		DELETE FROM maxi_test;
+		INSERT INTO maxi_test(id,content,created)VALUES(100,#{text},NOW());
+	</insert>
+	
+	<insert id="batchAdd" parameterType="String">
+		INSERT INTO maxi_test(id,content,created)VALUES(101,#{text},NOW());
+		INSERT INTO maxi_test(id,content,created)VALUES(102,#{text},NOW());
+		INSERT INTO maxi_test(id,content,created)VALUES('abc',#{text},NOW());
+	</insert>
+	
+	<update id="update" parameterType="String">
+		UPDATE maxi_test SET updated=NOW(),content=#{text} WHERE id=100;
+	</update>
+	
+	<delete id="delete" parameterType="int">
+		UPDATE maxi_test SET deleted=NOW(),alive=0 WHERE id=100;
+	</delete>
+	
+	<select id="get" parameterType="int" resultType="String">
+		SELECT content FROM maxi_test WHERE id=#{id} LIMIT 1;
+	</select>
+</mapper>
