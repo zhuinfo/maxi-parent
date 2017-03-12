@@ -3,7 +3,7 @@
 
 	<groupId>cn.maximus</groupId>
 	<artifactId>maxi-parent</artifactId>
-	<version>0.0.1-SNAPSHOT</version>
+	<version>0.0.1</version>
 	<packaging>jar</packaging>
 
 	<name>maxi-parent</name>
@@ -388,5 +388,6 @@
 		<connection>scm:git:https://github.com/zhuinfo/maxi-parent</connection>
 		<developerConnection>scm:git:https://github.com/zhuinfo/maxi-parent</developerConnection>
 		<url>https://github.com/zhuinfo/maxi-parent</url>
-	</scm>
+	  <tag>maxi-parent-0.0.1</tag>
+  </scm>
 </project>
